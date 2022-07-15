@@ -4,7 +4,7 @@ const UserModel = require('../models/user')
 const bcrypt = require('bcrypt')
 let pokemons = require('./mock-pokemon')
 const sequelize = new Sequelize(
-    'pokedex2',
+    'sql8506606',
     'sql8506606',
     'tsNgsr8Ekc',
     {
