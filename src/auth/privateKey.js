@@ -1,0 +1,1 @@
+module.exports = 'MY_VERY_VERY_PRIVATE_KEY'
