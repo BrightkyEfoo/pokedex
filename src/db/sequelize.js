@@ -5,10 +5,10 @@ const bcrypt = require('bcrypt')
 let pokemons = require('./mock-pokemon')
 const sequelize = new Sequelize(
     'pokedex2',
-    'root',
-    '',
+    'sql8506606',
+    'tsNgsr8Ekc',
     {
-        host:'localhost',
+        host:'sql8.freemysqlhosting.net',
         dialect:'mariadb',
         dialectOptions:{
             timezone : 'Etc/GMT+1'
