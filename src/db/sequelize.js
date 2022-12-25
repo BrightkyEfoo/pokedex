@@ -4,11 +4,12 @@ const UserModel = require('../models/user')
 const bcrypt = require('bcrypt')
 let pokemons = require('./mock-pokemon')
 const sequelize = new Sequelize(
-    'sql8506606',
-    'sql8506606',
-    'tsNgsr8Ekc',
+    'pokedex',
+    'root',
+    '123456789',
     {
-        host:'sql8.freemysqlhosting.net',
+        host:'mariadb-101883-0.cloudclusters.net',
+        port:10167,
         dialect:'mariadb',
         dialectOptions:{
             timezone : 'Etc/GMT+1'
