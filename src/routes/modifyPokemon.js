@@ -3,6 +3,7 @@ const { pokemon } = require('../db/sequelize')
 module.exports = (app) => {
   app.put('/api/pokemons/:id', (req, res) => {
     const id = parseInt(req.params.id)
+    console.log({id})
     pokemon.update({...req.body}, {
       where: { id: id }
     })
