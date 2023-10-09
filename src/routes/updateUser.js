@@ -1,7 +1,7 @@
 const {users} = require('../db/sequelize')
 const bcrypt = require('bcrypt')
 module.exports = (app)=>{
-    app.put('/signup/:id', (req,res)=>{
+    app.put('/api/v1/signup/:id', (req,res)=>{
         if(req.body.password.length <8){
             return res.status(400).json({message : 'Le mot de passe doit contenir 8 characteres ou plus'})
         }else {        

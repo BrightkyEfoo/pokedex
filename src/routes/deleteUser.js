@@ -1,7 +1,7 @@
 const {users} = require('../db/sequelize')
 
 module.exports = (app)=>{
-    app.delete('/signup/:id',(req,res)=>{
+    app.delete('/api/v1/signup/:id',(req,res)=>{
         users.findOne({
             where : {
                 id : req.params.id

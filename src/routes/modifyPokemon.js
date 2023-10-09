@@ -1,7 +1,7 @@
 const { pokemon } = require('../db/sequelize')
   
 module.exports = (app) => {
-  app.put('/api/pokemons/:id', (req, res) => {
+  app.put('/api/v1/pokemons/:id', (req, res) => {
     const id = parseInt(req.params.id)
     console.log({id})
     pokemon.update({...req.body}, {
@@ -14,7 +14,7 @@ module.exports = (app) => {
             res.json({message, data: pok })
         })
         .catch(err=>{
-            res.status(503).json({message : `Erreur aucun pokemon correspondant a l'id ${id}`  ,err})
+            res.status(404).json({message : `Erreur aucun pokemon correspondant a l'id ${id}`  ,err})
         })
     })
     .catch(err=>{

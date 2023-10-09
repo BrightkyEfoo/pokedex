@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const privateKey = require('../auth/privateKey')
 module.exports = (app)=>{
-    app.post('/connexion' , (req,res) => {
+    app.post('/api/v1/connexion' , (req,res) => {
         users.findOne({where : {username : req.body.username}})
             .then(User => {
                 bcrypt.compare(req.body.password,User.password)
@@ -20,11 +20,11 @@ module.exports = (app)=>{
                         }
                     })
                     .catch(err => {
-                        res.json({message : 'connexion echouee',err})
+                        res.status(400).json({message : 'connexion echouee',err})
                     })
             })
             .catch(err => {
-                res.json({message :'aucun utilisateur trouve' , err})
+                res.status(400).json({message :'aucun utilisateur trouve' , err})
             })
     })
 }
